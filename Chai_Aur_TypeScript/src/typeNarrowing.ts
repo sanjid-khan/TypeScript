@@ -8,15 +8,6 @@ function getChai(kind: string | number){
 
 
 
-function serverChai (msg?: string){
-    if(msg){
-        return `Serving ${msg}`;
-    }
-
-    return `Serving default masala chai`;
-}
-
-
 function orderChai (size: "small" | "medium" | "large" | number){
     if(size==="small"){
         return `small cutting chai...`
@@ -26,6 +17,14 @@ function orderChai (size: "small" | "medium" | "large" | number){
     }
 
     return `chai order #${size}`
+}
+
+
+function serveChai(msg? : string){
+    if(msg){
+        return `Serving ${msg}`
+    }
+    return `Serving default masala chai`
 }
 
 
@@ -46,6 +45,7 @@ function serve (chai: KulhadChai | Cutting){
     if(chai instanceof KulhadChai){
         return chai.serve();
     }
+    return chai.serve();
 }
 
 
@@ -67,11 +67,13 @@ function isChaiOrder(obj: any): obj is ChaiOrder{
 
 function serveOrder(item: ChaiOrder | string){
     if(isChaiOrder(item)){
-        return  `Serving ${item.type} chai with $ {item.sugar} 
+        return  `Serving ${item.type} chai with ${item.sugar} 
         sugar`
     }
     return `Serving custom chai: ${item}`
 }
+
+
 
 
 type MasalaChai= {type: "masala"; spicelevel: number};
@@ -79,7 +81,6 @@ type GingerChai= {type: "ginger"; amout: number};
 type ElaichaiChai= {type: "elaichi"; aroma: number};
 
 type Chai = MasalaChai | GingerChai | ElaichaiChai
-
 
 function MakeChai(order: Chai){
       switch(order.type){
@@ -101,7 +102,7 @@ function MakeChai(order: Chai){
 
 function brew (order: MasalaChai | GingerChai){
     if("spicelevel" in order){
-        // 
+       console.log(order.spicelevel)
     }
 }
 
@@ -110,3 +111,14 @@ function brew (order: MasalaChai | GingerChai){
 // function isStringArray (arr:unknown): arr is string []{
 
 // }
+
+
+
+
+// 1️⃣ typeof narrowing
+// 2️⃣ Truthy check narrowing
+// 3️⃣ Literal type narrowing
+// 4️⃣ instanceof narrowing
+// 5️⃣ Custom type guard (obj is Type)
+// 6️⃣ "in" operator narrowing
+// 7️⃣ Discriminated union narrowing

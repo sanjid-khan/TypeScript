@@ -18,10 +18,13 @@ type TeaRecipe ={
     milk:number
 }
 
+
 // class MasalaChai implements TeaRecipe{
 //      water = 100;
 //      milk  = 50;
 // }
+
+
 
 
  interface CupSize {
@@ -35,7 +38,14 @@ class Chai implements CupSize{
 }
 
 
+// type Response= {ok:true} | {ok:false}
+// class myRes implements Response{
+//     ok:boolean=true;
+// }
 
+
+
+// Literal type
 type TeaType = "masala" | "ginger" | "lemon"
 
 function orderChai(t: TeaType){
@@ -74,4 +84,6 @@ const cfg: Config ={
     version:1
 }
 
+
 // cfg.appName= "ChaiCode"
+//  ay khane error dibe karon readonly thakle matro ekbar e set kora jabe

@@ -7,14 +7,16 @@ type Book={
     name:string
 };
 
-
 let bookString= `{"name":"who moved my cheese"}`;
 
 let bookobjbect= JSON.parse(bookString) as Book
 
 console.log(bookobjbect);
 
+
 const inputElement=document.getElementById("username") as HTMLInputElement;
+
+
 
 
 let value:any
@@ -47,6 +49,7 @@ try{
 
 const data:unknown ="chai aur code"
 const strData: string =data as string
+
 
 
 type Role= "admin" | "user" | "superadmin";

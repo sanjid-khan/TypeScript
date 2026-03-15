@@ -47,9 +47,10 @@ smallCup=bigCup
 
 
 
-type Brew= {brewTime: number}
-const coffee ={brewtime:5, beans: "Arabica"}
-// const ChaiBrew: Brew =coffee
+type Brew = { brewTime: number }
+const coffee = { brewTime: 5, beans: "Arabica" }
+const ChaiBrew: Brew = coffee   
+
 
 
 type User ={
@@ -72,3 +73,61 @@ type Order ={
     address: Address
 }
 
+
+
+type Chai ={
+    name:string;
+    price: number;
+    isHot: boolean
+}
+
+const updateChai= (updates: Partial <Chai>)=>{
+    console.log("Updating chai with",updates);
+}
+
+updateChai({price:25})
+updateChai({isHot:true})
+updateChai({})
+
+
+
+type ChaiOrder={
+    name?:string;
+    quantity?:number
+}
+
+const placeOrder= (order: Required<ChaiOrder>)=>{
+    console.log(order);
+}
+
+placeOrder({
+    name:"Masala chai",
+    quantity:2
+})
+
+
+
+type Chaii ={
+    name:string;
+    price:number;
+    isHot:boolean;
+    ingredients: string []
+}
+
+type BasicChaiInfo= Pick <Chaii, "name" | "price"  >
+
+const chaiInfo: BasicChaiInfo={
+    name:"Lemon Tea",
+    price:30
+}
+
+
+
+type ChaiNew ={
+    name:string;
+    price:number;
+    isHot:boolean;
+    secretIngredients: string;
+}
+
+type Public =Omit <ChaiNew, "secretIngredients" >
