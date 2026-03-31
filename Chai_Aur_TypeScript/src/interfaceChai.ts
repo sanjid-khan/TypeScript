@@ -18,11 +18,13 @@ interface Shop {
 const s : Shop = {id: 1, name :"Chai code coffe"}
 // s.id =2  
 
+
 interface DiscountCalculator {
     (price: number) : number
 }
 
 const apply50: DiscountCalculator = (p) => p*0.5
+
 
 
 interface TeaMachine {
@@ -71,4 +73,6 @@ interface A {a: string}
 interface B {b: string}
 
 interface C extends A, B {}
+
+const obj: C = { a: "hello", b: "world" }
 

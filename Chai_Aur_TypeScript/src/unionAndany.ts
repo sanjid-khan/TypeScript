@@ -23,8 +23,6 @@ console.log(currentorder);
 
 
 
-// practice nije nije
-
 let mixedData: (string | number)[] = [1, "chai", 2, "coffee", 404];
 
 function getOrderDetails(funtionType: number | string) {
@@ -41,3 +39,8 @@ randomValue = true;
 
 let userRole: 'admin' | 'editor' | 'viewer' = 'viewer';
 userRole = 'admin';
+
+
+
+
+ 
