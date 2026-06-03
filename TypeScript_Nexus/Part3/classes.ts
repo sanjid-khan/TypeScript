@@ -78,7 +78,7 @@ class Employee extends Customer{
     }
 }
 
-const E1= new Employee (420,"Nasim",20,320);
+const E1= new Employee (420,"Sanjid",20,320);
 console.log(E1);
 console.log(E1.meet());
 console.log(E1.salary);
@@ -117,27 +117,6 @@ console.log(value(true));
 console.log(value(["Mohan","Rohan"]));
 
 
-
-interface Admin <T,U>{
-    name:string,
-    age:number,
-    addhard:T,
-    salary:U
-}
-
-const obj10: Admin<number,number> ={
-    name:"Rohit",
-    age:20,
-    addhard:123,
-    salary:23213
-}
-
-const obj11: Admin<string,number> ={
-    name:"ROhit",
-    age:20,
-    addhard:"32112",
-    salary:123
-}
 
 
 interface Per <T,U>{
@@ -195,6 +174,7 @@ interface Job<V, W> {
 }
 
 type Employeer<T, U, V, W> = Per<T, U> & Job<V, W>;
+
 
 const emp: Employeer<number, string, string, number> = {
     name: "Sanjid",

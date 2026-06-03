@@ -89,14 +89,6 @@ function meet(msg:string, val:number):void{
 meet("Sanjid Khan",4);
 
 
-function sadin(str:string, nm:number):number{
-    console.log(str,nm);
-    return nm;
-}
-
-const result= sadin("Sanjid",50);
-console.log(result);
-
 
 // default parameter
 function neet(msg:string="Jit"){
@@ -105,14 +97,6 @@ function neet(msg:string="Jit"){
 
 neet();
 neet("sanjid");
-
-
-function abc(def:string="sadin"){
-    console.log(def);
-}
-
-abc();
-abc("Sanjid");
 
 
 // Optional Parameter
@@ -124,27 +108,19 @@ Gate("shakib");
 Gate();
 
 
-function xyz(opt?:string){
-    console.log(opt || "Sanjid");
-}
-xyz("Sadin");
-xyz();
-
-
 
 // Arrow function
 
-const sum=(a:number,b:number)=>{
+const sum=(a:number,b:number):number=>{
     return a+b;
 }
 
 console.log(sum(3,4));
 
 
-const mul=(x:number,y:number)=>{
-    return x*y;
-}
-console.log(mul(5,4));
+const multiply = (a: number, b: number): number => a * b;
+
+console.log(multiply(3, 4)); 
 
 
 
@@ -197,7 +173,7 @@ interface BankEmployee extends human{
 }
 
 const obj8:Teacher={
-    name:"Rohit",
+    name:"Sanjid",
     age:20,
     salary:"chillar",
     id:123
