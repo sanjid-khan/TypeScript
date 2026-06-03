@@ -18,7 +18,12 @@ const fetchData= async ()=>{
        console.log("Todo:", data);
        return data;
 
-    } catch(error: any){
-
+    } catch(error: unknown) {
+    if(error instanceof Error){
+        console.log("Error:", error.message);
+    } else {
+      console.log("Unexpected error:", error);
     }
-}
+    return null;
+  }
+};

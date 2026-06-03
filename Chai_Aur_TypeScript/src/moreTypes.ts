@@ -16,6 +16,8 @@ let bookobjbect= JSON.parse(bookString) as Book
 console.log(bookobjbect.name);
 
 
+
+
 type Products = {
   name: string
   price: number
@@ -30,6 +32,7 @@ console.log(product.price);
 
 
 
+
 type User = {
   name: string
   age: number
@@ -40,58 +43,11 @@ console.log(dataa.name);
 
 
 
+
 const inputElement=document.getElementById("username") as HTMLInputElement;
 console.log(inputElement.value);
 
 
-const submitBtn = document.querySelector(".submit-btn") as HTMLButtonElement;
-submitBtn.disabled = true;
-
-
-const avatar = document.getElementById("avatar") as HTMLImageElement;
-avatar.src = "new-photo.jpg";
-
-
-
-const username = localStorage.getItem("user");
-console.log(username!.toLocaleUpperCase());
-
-
-
-document.addEventListener("click", (event) => {
-
-    const button = event.target as HTMLButtonElement;
-    console.log(button.innerText); 
-});
-
-
-
-document.addEventListener('click', (event)=>{
-
-    if(event.target instanceof HTMLButtonElement){
-        console.log(event.target.innerText);
-    }
-})
-
-
-
-document.addEventListener("click", (event) => {
-    const button = event.target as HTMLButtonElement;
-    button.disabled = true;
-});
-
-
-document.addEventListener("change", (event) => {
-    const input = event.target as HTMLInputElement;
-    console.log(input.value);
-});
-
-
-
-document.addEventListener("submit", (event) => {
-    const form = event.target as HTMLFormElement;
-    const data = new FormData(form);
-});
 
 
 
@@ -134,10 +90,6 @@ console.log(user.token);
 
 
 
-// 1️⃣ DOM elements access
-// 2️⃣ API response typing
-// 3️⃣ React refs
-// 4️⃣ JSON.parse data typing
 
 
 
@@ -149,6 +101,7 @@ value=2.5
 value.toUpperCase()
 
 
+
 let newValue:unknown
 
 newValue="chai"
@@ -158,6 +111,7 @@ newValue=2.5
 if(typeof newValue === "string"){
     newValue.toUpperCase();
 }
+
 
 
 

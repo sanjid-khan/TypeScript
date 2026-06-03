@@ -16,15 +16,6 @@ function greetUser(name: string | null | undefined) {
     }
 }
 
-function greetUser2(name: string | null | undefined) {
-    if (name) {
-        console.log("Hello, " + name.toUpperCase()); // ✅ নিশ্চিত string
-    } else {
-        console.log("No name found");
-    }
-}
-
-
 
 
 function orderChai (size: "small" | "medium" | "large" | number){
@@ -61,33 +52,12 @@ class Cutting{
     }
 }
 
+
 function serve (chai: KulhadChai | Cutting){
     if(chai instanceof KulhadChai){
         return chai.serve();
     }
     return chai.serve();
-}
-
-
-
-
-class Order {
-    orderId: string;
-    constructor(id: string) { this.orderId = id; }
-}
-
-class Payment {
-    amount: number;
-    constructor(amt: number) { this.amount = amt; }
-}
-
-function handleRequest(request: Order | Payment){
-    if(request instanceof Order){
-        console.log("Order ID:", request.orderId)
-    }
-    else{
-        console.log("Payment Amount:", request.amount);
-    }
 }
 
 
@@ -144,109 +114,6 @@ function MakeChai(order: Chai){
 function brew (order: MasalaChai | GingerChai){
     if("spicelevel" in order){
        console.log(order.spicelevel)
-    }
-}
-
-
-
-type Admin = { role: string; permissions: string[] };
-type User  = { role: string; email: string };
-
-function checkAccess (person: Admin | User){
-    if('permissions' in person){
-        console.log("Admin permissions: ", person.permissions)
-    }
-    else{
-        console.log("User email:", person.email);
-    }
-}
-
-
-
-
-let apiRequestStatus: 'pending' | 'success' | 'error' = 'pending';
-
-function handleStatus(status: 'pending' | 'success' | 'error') {
-    if (status === 'success') {
-        console.log("✅ Request successful!");
-    } else if (status === 'error') {
-        console.log("❌ Something went wrong!");
-    } else {
-        console.log("⏳ Still pending...");
-    }
-}
-
-
-
-
-// type SuccessResponse = { status: "success"; data: string };
-// type ErrorResponse   = { status: "error";   message: string };
-
-// type ApiResponse = SuccessResponse | ErrorResponse;
-
-// function handleResponse(response: ApiResponse) {
-//     if (response.status === "success") {
-//         console.log("Data:", response.data);       // ✅ SuccessResponse
-//     } else {
-//         console.log("Error:", response.message);   // ✅ ErrorResponse
-//     }
-// }
-
-
-
-// function isStringArray (arr:unknown): arr is string []{
-
-// }
-
-
-
-// Real World use case
-
-// const user: string | null = fetchUser();
-
-// if (user) {
-//     console.log(user.toUpperCase()); // ✅ safe
-// }
-
-
-// console.log(user?.toUpperCase());
-
-
-
-type ApiResponse =
-    | { status: "success"; data: string[] }
-    | { status: "error";   message: string }
-    | { status: "loading" }
-
-
-function handleResponse(response: ApiResponse) {
-    if (response.status === "success") {
-        console.log(response.data);
-    } else if (response.status === "error") {
-        console.log(response.message);
-    } else {
-        console.log("Loading...");
-    }
-}
-
-
-
-function formatInput(value: string | number) {
-    if (typeof value === "string") {
-        return value.trim().toUpperCase();
-    }
-    return value.toFixed(2);
-}
-
-
-type Card   = { cardNumber: string };
-type Cash   = { amount: number };
-
-function processPayment(payment: Card | Cash) {
-    if ("cardNumber" in payment) {
-        console.log("Card:", payment.cardNumber);
-    } else {
-        console.log("Cash:", payment.amount);
     }
 }
 

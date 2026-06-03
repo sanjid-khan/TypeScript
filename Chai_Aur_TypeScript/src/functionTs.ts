@@ -50,7 +50,6 @@ const greet = (name: string): string => {
     return `Hello, ${name}!`;
 };
 
-
 // const greet = (name: string): string => `Hello, ${name}!`;
 
 console.log(greet("Rahim")); 
